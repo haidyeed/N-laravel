@@ -10,6 +10,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-COPY start-container /usr/local/bin/start-container
+COPY start-container.sh /usr/local/bin/start-container
 RUN chmod +x /usr/local/bin/start-container
 ENTRYPOINT ["start-container"]
