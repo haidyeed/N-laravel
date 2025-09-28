@@ -10,3 +10,5 @@ use Illuminate\Support\Facades\Route;
 // Route::delete('/apartments/{id}', [ApartmentController::class, 'destroy']);
 
 Route::apiResource('apartments', ApartmentController::class);
+
+Route::get('apartments/search/{query}', [ApartmentController::class, 'searchApartments']);

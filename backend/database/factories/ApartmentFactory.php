@@ -27,7 +27,8 @@ class ApartmentFactory extends Factory
             'area' => $this->faker->randomFloat(2, 60, 250), // in square meters
             'floor' => $this->faker->numberBetween(1, 20),
             'is_available' => $this->faker->boolean(80), // 80% chance available
-            'image' => 'https://m.media-amazon.com/images/I/71cVOgvystL._AC_UL640_QL65_.jpg',
+            'order' => $this->faker->numberBetween(0, 100)
+
         ];
     }
 }

@@ -20,6 +20,6 @@ class Apartment extends Model
         'area',
         'floor',
         'is_available',
-        'image',
-    ];
+        'order',
+        ];
 }

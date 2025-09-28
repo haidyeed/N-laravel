@@ -23,7 +23,7 @@ return new class extends Migration
             $table->decimal('area', 10, 2);
             $table->integer('floor');
             $table->boolean('is_available')->default(true);
-            $table->string('image', 255)->nullable();
+            $table->integer('order');
             $table->timestamps();
         });
     }

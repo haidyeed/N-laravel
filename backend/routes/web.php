@@ -8,4 +8,4 @@ Route::get('/', function () {
 });
 
 
-Route::resources(['apartments' => ApartmentWebController::class,]);
+Route::resources(['apartments' => ApartmentWebController::class]);

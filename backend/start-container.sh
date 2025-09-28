@@ -23,6 +23,7 @@ fi
 # Run migrations
 echo "Running migrations..."
 php artisan migrate --force
+php artisan db:seed
 
 # Start Apache
 echo "Serving Application..."

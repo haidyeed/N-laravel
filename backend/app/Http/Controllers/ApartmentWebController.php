@@ -41,16 +41,6 @@ class ApartmentWebController extends Controller
         $apartment->order = $request->order ?? 0;
         $request->is_available ? $apartment->is_available = 1 : $apartment->is_available = 0;
 
-
-        // if (!$request->has('image')) {
-        //     $apartment->image = old('image', $apartment->image) /* default img */;
-        // } else {
-        //     $name = round(microtime(true) * 1000) . '.' . request()->image->getClientOriginalExtension();
-        //     request()->image->storeAs('public/apartment_image/', $name);
-        //     $apartment->image = 'storage/apartment_image/' . $name;
-
-        // }
-
         $apartment->save();
 
         return redirect(route('apartments.index'));
@@ -69,17 +59,8 @@ class ApartmentWebController extends Controller
         $apartment->unit_number = $request->unit_number;
         $apartment->project = $request->project;
         $apartment->description = $request->description;
+        $apartment->order = $request->order ?? old('order', $apartment->order);
         $apartment->is_available = (!$request->has('is_available') || $request->is_available == 0) ? 0 : 1;
-
-        // if (!$request->has('image')) {
-        //     $apartment->image = old('image', $apartment->image) /* default img */;
-        // } else {
-        //     $oldImage = old('image', $apartment->image);
-        //     $name = round(microtime(true) * 1000) . '.' . request()->image->getClientOriginalExtension();
-        //     request()->image->storeAs('public/apartment_image/', $name);
-        //     $apartment->image = 'storage/apartment_image/' . $name;
-        //     File::delete(public_path($oldImage));
-        // }
 
         $apartment->save();
 
@@ -97,13 +78,8 @@ class ApartmentWebController extends Controller
         $response = false;
         $apartment = Apartment::find($id);
 
-        if ($apartment) {
-        //     $oldImage = $apartment->image ? old('image', $apartment->image) : NULL;
-
-            if ($apartment->delete()) {
+        if ($apartment && $apartment->delete()) {
                 $response = true;
-        //         File::delete(public_path($oldImage));
-            }
         }
         echo json_encode($response);
         exit;

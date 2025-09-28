@@ -11,7 +11,7 @@ class StoreApartmentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -33,7 +33,6 @@ class StoreApartmentRequest extends FormRequest
             'floor' => 'required|integer',
             'is_available' => 'boolean',
             'order' => 'numeric|min:0',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|dimensions:min_width=340,min_height=600,max_width=480,max_height=640',
         ];
     }
 }
