@@ -26,13 +26,13 @@ class StoreApartmentRequest extends FormRequest
             'unit_number' => 'required|string|max:20',
             'project' => 'required|string|max:100',
             'description' => 'nullable|string|max:1000',
-            'price' => 'required|numeric',
-            'bedrooms' => 'required|integer',
-            'bathrooms' => 'required|integer',
-            'area' => 'required|numeric',
-            'floor' => 'required|integer',
+            'price' => 'required|numeric|min:0|max:99999999.99',
+            'bedrooms' => 'required|integer|min:0',
+            'bathrooms' => 'required|integer|min:0',
+            'area' => 'required|numeric|min:0|max:99999999.99',
+            'floor' => 'required|integer|min:0',
             'is_available' => 'boolean',
-            'order' => 'numeric|min:0',
+            'order' => 'nullable|numeric|min:0',
         ];
     }
 }

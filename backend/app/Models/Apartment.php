@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Apartment extends Model
 {
@@ -22,4 +23,14 @@ class Apartment extends Model
         'is_available',
         'order',
         ];
+
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('order', function (Builder $builder) {
+            $builder->orderBy('id', 'desc');
+        });
+    }
 }

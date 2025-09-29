@@ -62,10 +62,10 @@ class ApartmentController extends Controller
         return response()->json(['message' => 'Apartment deleted']);
     }
 
-    public function searchApartments($query)
+    public function searchApartments($search)
     {
         $apartmentService = new ApartmentService();
-        $apartments = $apartmentService->searchApartments($query);
+        $apartments = $apartmentService->searchApartments($search);
 
         if ($apartments->isEmpty()) {
             return response()->json(['message' => 'No apartments found matching your query'], 404);

@@ -18,7 +18,7 @@ http://0.0.0.0:8000
 
 ## Docker services
 backend:	Laravel app with Apache & PHP 8.2	on port:8000
-frontend:	Placeholder for frontend assets	          N/A
+frontend:	Placeholder for frontend assets	    on http://0.0.0.0:8000/dashboard/apartments
 mysql:	     MySQL 5.7 database	                on port:3306
 adminer:	DB management UI                	on port:8081
 
@@ -46,6 +46,10 @@ N-laravel/
 │       └── Requests       #for validation
 │     └── Models 
 │     └── Services         #for the search method logic
+│   └── resources
+│     └── views
+│       └── components    
+│       └── dashboard     #for Frontend pages
 ├── docker-compose.yml
 └── README.md
 
@@ -286,3 +290,14 @@ RESPONSE: {
         "total": 1
     }
 }
+
+## frontend pages 
+on http://0.0.0.0:8000/dashboard/apartments
+HTML,CSS & JS 
+to handle
+- List all apartments 
+- show certain apartment
+- edit certain apartment
+- delete certain apartment
+- create new apartment
+- search apartments

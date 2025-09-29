@@ -8,4 +8,11 @@ Route::get('/', function () {
 });
 
 
-Route::resources(['apartments' => ApartmentWebController::class]);
+
+//Dashboard routes
+
+Route::group(['prefix' => 'dashboard','as' => 'dashboard.'], function () {
+    
+    Route::resources(['apartments' => ApartmentWebController::class]);
+    
+});
