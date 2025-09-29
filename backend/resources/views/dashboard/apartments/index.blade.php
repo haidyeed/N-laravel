@@ -12,11 +12,6 @@
                     <li class="breadcrumb-item active" aria-current="page">Apartment</li>
                 </ol>
             </div>
-            <ul class="nav nav-tabs page-header-tab">
-                <li class="nav-item"><a href="#Apartment-all" class="nav-link active" data-toggle="tab">List View</a></li>
-                <li class="nav-item"><a href="#Apartment-grid" class="nav-link" data-toggle="tab">Grid View</a></li>
-                <li class="nav-item"><a href="{{ route('dashboard.apartments.create') }}" class="nav-link"><i class="fa fa-plus"></i>Add New</a></li>
-            </ul>
 
             <form method="GET" action="{{ route('dashboard.apartments.index') }}" class="mb-3">
                 <div class="input-group">
@@ -25,7 +20,13 @@
                     <button class="btn btn-primary" type="submit">Search</button>
                 </div>
             </form>
-            
+        </div>
+        <div class="d-flex justify-content-end mb-3">
+            <ul class="nav nav-tabs page-header-tab">
+                <li class="nav-item"><a href="#Apartment-all" class="nav-link active" data-toggle="tab">List View</a></li>
+                <li class="nav-item"><a href="#Apartment-grid" class="nav-link" data-toggle="tab">Grid View</a></li>
+                <li class="nav-item"><a href="{{ route('dashboard.apartments.create') }}" class="nav-link"><i class="fa fa-plus"></i>Add New</a></li>
+            </ul>
         </div>
     </div>
 </div>
@@ -40,7 +41,13 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Unit Name</th>
+                                    <th>Unit Number</th>
+                                    <th>Project</th>
+                                    <th>Floor</th>
+                                    <th>Area</th>
+                                    <th>Price</th>
                                     <th>Description</th>
+                                    <th>Is Available</th>
                                     <th>Creating Date</th>
                                     <th>Actions</th>
                                 </tr>
@@ -52,7 +59,13 @@
                                         {{$apartment->id}} 
                                     </td>
                                     <td><div class="font-15">{{ $apartment->unit_name }}</div></td>
+                                    <td><div class="font-15">{{ $apartment->unit_number }}</div></td>
+                                    <td><div class="font-15">{{ $apartment->project}}</div></td>
+                                    <td><div class="font-15">{{ $apartment->floor }}</div></td>
+                                    <td><div class="font-15">{{ $apartment->area }}</div></td>
+                                    <td><div class="font-15">{{ $apartment->price }}</div></td>
                                     <td><div class="font-15">{{ mb_substr($apartment->description ,0,20 )}} @if (strlen($apartment->description) > 20)...@endif</div></td>
+                                    <td><div class="font-15">{{ $apartment->is_available }}</div></td>
                                     <td><strong>{{ $apartment->created_at }}</strong></td>
                                     <td>
                                         <a href="{{ route('dashboard.apartments.show', $apartment->id) }}" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-eye"></i></a>
