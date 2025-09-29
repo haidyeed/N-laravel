@@ -39,7 +39,13 @@ N-laravel/
 │   ├── Dockerfile
 │   ├── entrypoint.sh
 │   ├── .env.example
-│   └── ...
+│   └── database
+│   └── app
+│     └── Http
+│       └── Controllers    #for CRUD methods
+│       └── Requests       #for validation
+│     └── Models 
+│     └── Services         #for the search method logic
 ├── docker-compose.yml
 └── README.md
 
