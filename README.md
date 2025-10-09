@@ -301,3 +301,13 @@ to handle
 - delete certain apartment
 - create new apartment
 - search apartments
+
+## frontend react app 
+on http://localhost:3000/ 
+to handle
+- List all apartments 
+- show certain apartment
+- edit certain apartment
+- delete certain apartment
+- create new apartment
+- search apartments
